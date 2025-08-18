@@ -1,0 +1,165 @@
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 5px;
+  margin: 0 auto;
+}
+
+.carousel-container {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  justify-content: center;
+  transition: transform 0.5s ease; /* Transition pour fluidité */
+  overflow: hidden;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  width: 90vw;
+  max-width: 300px;
+  height: 60vw;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  flex: 0 0 300px;
+  transition: transform 1.5s ease, opacity 1.5s ease; /* Animation fluide */
+}
+
+.card img {
+  width: 100%;
+  height: 40vw;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 3px;
+}
+
+.card-center {
+  opacity: 1;
+  transform: scale(1.05);
+  z-index: 2;
+  transition: all 1.5s ease;
+}
+
+.card-side {
+  opacity: 0.4; /* Opacité réduite pour les cartes latérales */
+  transform: scale(1);
+  background: none;
+  z-index: 1;
+  transition: all 1.5s ease;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.favorite-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #ddd;
+  color: #000;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+/* Styles pour la vue agrandie */
+.enlarged-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.enlarged-image-container {
+  position: relative;
+  text-align: center;
+  max-width: 90%;
+  max-height: 90vh;
+}
+
+.enlarged-image-container img {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 50%;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 15px;
+  padding: 15px;
+}
+
+/* Ajoutez dans Carousel.css */
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.carousel-arrow {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 20px;
+}
+
+/* Responsive : mobile first */
+@media (max-width: 600px) {
+  .carousel {
+    width: 100%;
+    max-width: 100vw;
+    padding: 0;
+  }
+  .carousel-container {
+    width: 100%;
+    max-width: 100vw;
+  }
+  .card {
+    width: 90vw;
+    max-width: 95vw;
+    height: 60vw;
+    max-height: 70vw;
+    padding: 2vw;
+  }
+  .card img {
+    height: 40vw;
+    max-height: 55vw;
+  }
+  .carousel-arrow {
+    font-size: 2.5rem;
+    margin: 0 10px;
+  }
+}
