@@ -1,4 +1,6 @@
+import "./Global.css";
 import "./home.css";
+
 
 function home() {
 	return (
